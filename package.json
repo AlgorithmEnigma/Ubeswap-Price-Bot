@@ -1,0 +1,26 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "A Price Bot for Ubeswap Tokens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Lowell",
+  "license": "ISC",
+  "dependencies": {
+    "@celo-tools/celo-ethers-wrapper": "^0.0.5",
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "@ethersproject/address": "^5.4.0",
+    "@ethersproject/contracts": "^5.4.1",
+    "@ethersproject/networks": "^5.4.2",
+    "@ethersproject/providers": "^5.4.5",
+    "@ethersproject/random": "^5.4.0",
+    "@ethersproject/solidity": "^5.4.0",
+    "@ubeswap/sdk": "^2.1.1",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "ethers": "^5.4.7"
+  }
+}
