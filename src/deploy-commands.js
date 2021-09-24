@@ -16,26 +16,11 @@ for (const file of commandFiles) {
 
 
 const rest0 = new REST({ version: "9" }).setToken(secret0);
-const rest1 = new REST({ version: "9" }).setToken(secret1);
 
 (async () => {
   try {
     await rest0.put(
       Routes.applicationGuildCommands(clientId0, guildId),
-      {body: commands},
-    );
-
-    console.log('Successfully registered application commands.');
-
-  } catch (err) {
-    console.error(err);
-  }
-})();
-
-(async () => {
-  try {
-    await rest1.put(
-      Routes.applicationGuildCommands(clientId1, guildId),
       {body: commands},
     );
 
