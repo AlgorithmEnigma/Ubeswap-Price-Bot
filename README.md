@@ -5,6 +5,11 @@
 
 ## How to set up a bot
 Ubeswap Price bot requires [Node.js](https://nodejs.org/) v16+ to run.
+
+Follow:  
+https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot  
+https://discordjs.guide/preparations/adding-your-bot-to-servers.html
+
 First create a config.json in the root directory: 
 ```
 { 
