@@ -1,14 +1,40 @@
-# Ubeswap Price Bot
+# Ube Price Bot
 
-## Setup a bot
 
-First create a config.json in the root directory:
-{
-    "clientId0" : "ClientId goes here",
-    "guildId" : "GuildId goes here",
-    "secret0": "Bot secret goes here"
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+## How to set up a bot
+Ubeswap Price bot requires [Node.js](https://nodejs.org/) v16+ to run.
+First create a config.json in the root directory: 
+```
+{ 
+    "clientId0" : "ClientId goes here", 
+    "guildId" : "GuildId goes here", 
+    "secret0": "Bot secret goes here" 
 }
+```
+Install the dependencies and devDependencies and start the server.
 
-Then run node index.js
-It can take 2 arguments, the symbols of the pair you want to watch.
-Example: node index.js CELO cUSD
+```sh
+cd Ubeswap-Price-Bot
+yarn install
+```
+
+To initialize a bot.
+
+```sh
+cd src
+node index.js ARG1 ARG2
+```
+It takes two token arguments
+example:
+```
+node index.js CELO cUSD
+```
+
+
+## License
+
+MIT
+
+
