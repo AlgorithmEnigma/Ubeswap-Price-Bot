@@ -4,17 +4,15 @@ const { Client, Intents, Collection, Role, Guild } = require("discord.js");
 const { secret0, guildId } = require("../config.json");
 const { getTokenInfo, getPrice } = require("./data.js");
 
+const REFRESH_RATE = 60000 // Change this to change how often the price is recalculated in ms.
+
+// Init token constants
 const args = process.argv.slice(2);
+const argToken0 = getTokenInfo(args[0]);
+const argToken1 = getTokenInfo(args[1]);
 
 // Create discord client
 const client0 = new Client({ intents: [Intents.FLAGS.GUILDS] });
-// console.log(client0.guilds.resolveId(guildId));
-
-// Init token constants
-const argToken0 = getTokenInfo(args[0]);
-const argToken1 = getTokenInfo(args[1]);
-const UBE = getTokenInfo("UBE");
-const CELO = getTokenInfo("CELO");
 
 // Create client commands
 client0.commands = new Collection();
@@ -25,7 +23,6 @@ const commandFiles = fs
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   console.log(command.data.name);
-
   client0.commands.set(command.data.name, command);
 }
 
@@ -52,7 +49,7 @@ client0.once("ready", async (ready) => {
   };
   client0.user.setPresence(presenceData);
 
-  // setInterval(() => {
+  setInterval(() => {
   ready.guilds.fetch(guildId).then((guild) => {
     if (argToken0 != undefined && argToken1 != undefined) {
       getPrice(argToken0, argToken1).then((value) => {
@@ -66,7 +63,7 @@ client0.once("ready", async (ready) => {
       });
     }
   });
-  // }, 60000);
+  }, REFRESH_RATE);
 });
 
 //Watches for commands
